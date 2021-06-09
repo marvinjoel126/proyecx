@@ -17,3 +17,16 @@ $pass1 = $_POST['pass1'];
 $pass2 = $_POST['pass2'];
     if($pass1 == $pass2){
         $sql = "INSERT INTO usuario (nombre, correo, pass) VALUE ('".$nombre."','".$correo."','".$pass1."')";
+
+        
+
+        if(mysqli_query($conn,$sql)){
+            header("Location:index.html");
+        }else{
+            echo "ERROR AL REGISTRARSE";
+        }
+    }else {
+        echo "Verifique las Contraseñas";
+    }
+}
+?>

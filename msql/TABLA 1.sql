@@ -1,0 +1,5 @@
+CREATE DATABASE proyect;
+use proyec;
+CREATE TABLE usuario(id int(10) PRIMARY KEY  AUTO_INCREMENT NOT NULL, nombre VARCHAR(15)
+NOT NULL, correo VARCHAR(35) NOT NULL, 
+pass TEXT NOT NULL);
