@@ -17,7 +17,7 @@ $total = $_POST['total'];
    
         $sql = "INSERT INTO registro (producto, cantidad, precio,total) VALUE ('".$producto."','".$cantidad."','".$precio."','".$total."')";
         if(mysqli_query($conn,$sql)){
-            header("Location:inicio.html");
+            header("Location:inicio.php");
         }else{
             echo "ERROR AL REGISTRARSE";
         }

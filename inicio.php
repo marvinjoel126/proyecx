@@ -1,3 +1,16 @@
+<?php
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "proyec";
+
+$conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+if(!$conn){
+    die("Conexion Fallida: ".mysqli_connect_error());
+}
+  $consulta = mysqli_query($conn, "SELECT * FROM registro");
+?>			
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +59,7 @@
 		</div>
 	</div>
 
-<!--Buscador-->
+ <!--Buscador-->
 	<div class="header">
 		<div class="header-left">
 			<div class="menu-icon dw dw-menu"></div>
@@ -133,8 +146,8 @@
 						<span class="user-name">Marvin</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Perfil</a>
-						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Configuracion</a>
+						<!-- <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Perfil</a>  -->
+						<!-- <a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Configuracion</a> -->
 					    <a class="dropdown-item" href="index.html"><i class="dw dw-logout"></i> Cerrar sesión</a>
 					
 					</div>
@@ -291,100 +304,32 @@
 			
 			<!--inicio cuadro-->
 			<div class="card-box mb-30">
-				<h2 class="h4 pd-20">Productos mas vendididos</h2>
+				<h2 class="h4 pd-20">Productos </h2>
 				<table class="data-table table nowrap">
 					<thead>
 						<tr>
-							<th class="table-plus datatable-nosort">Producto</th>
-							<th>Nombre</th>
-							<th>Color</th>
-							<th>Precio</th>
-							<th class="datatable-nosort">cantidad</th>
-						</tr>
-					</thead>
-					
-					<tbody>
-						<tr>
-							<td class="table-plus">
-								<img src="vendors/images/product-1.jpg" width="70" height="70" alt="">
-							</td>
-							<td>
-								<h5 class="font-16">Shirt</h5>
-								by John Doe
-							</td>
-							<td>Black</td>
-							<td>M</td>
-							<td>$1000</td>
-							<td>1</td>
-							<td>
-								
-							</td>
-						</tr>
-						<tr>
-							<td class="table-plus">
-								<img src="vendors/images/product-2.jpg" width="70" height="70" alt="">
-							</td>
-							<td>
-								<h5 class="font-16">Boots</h5>
-								by Lea R. Frith
-							</td>
-							<td>brown</td>
-							<td>9UK</td>
-							<td>$900</td>
-							<td>1</td>
-							<td>
-								
-							</td>
-						</tr>
-						<tr>
-							<td class="table-plus">
-								<img src="vendors/images/product-3.jpg" width="70" height="70" alt="">
-							</td>
-							<td>
-								<h5 class="font-16">Hat</h5>
-								by Erik L. Richards
-							</td>
-							<td>Orange</td>
-							<td>M</td>
-							<td>$100</td>
-							<td>4</td>
-							<td>
-								
-							</td>
-						</tr>
-						<tr>
-							<td class="table-plus">
-								<img src="vendors/images/product-4.jpg" width="70" height="70" alt="">
-							</td>
-							<td>
-								<h5 class="font-16">Long Dress</h5>
-								by Renee I. Hansen
-							</td>
-							<td>Gray</td>
-							<td>L</td>
-							<td>$1000</td>
-							<td>1</td>
-							<td>
+							<th class="table-plus datatable-nosort">No.</th>
+							<th>Nombre producto</th>
+							<th>cantidad</th>
+							<th>Precio Unitario</th>
+							<th class="datatable-nosort">Total</th>
+
 							
-							</td>
 						</tr>
-						<tr>
-							<td class="table-plus">
-								<img src="vendors/images/product-5.jpg" width="70" height="70" alt="">
-							</td>
-							<td>
-								<h5 class="font-16">Blazer</h5>
-								by Vicki M. Coleman
-							</td>
-							<td>Blue</td>
-							<td>M</td>
-							<td>$1000</td>
-							<td>1</td>
-							<td>
-								
-							</td>
-						</tr>
-					</tbody>
+						<?php 
+							while ($row=mysqli_fetch_array($consulta)) {
+								echo "<tr>";
+								echo "<td>". $row["id"]."</td>";
+								echo "<td>". $row["producto"]."</td>";
+								echo "<td>". $row["cantidad"]."</td>";
+								echo "<td>". $row["precio"]."</td>";
+								echo "<td>". $row["total"]."</td>";
+							}
+							?>
+					</thead>
+
+					
+					
 				</table>
 			</div>
 

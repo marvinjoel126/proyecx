@@ -20,7 +20,7 @@ $resultado = mysqli_num_rows($sql);
 if($resultado ==1){
     $sql=mysqli_query($conn, "SELECT id FROM usuario WHERE nombre='".$nombre."' AND pass ='".$pass."'");
     $fila =mysqli_fetch_array($sql);
-    header("Location: inicio.html");
+    header("Location: inicio.php");
     //header("Location: /Login/sesion/index.php?fg=$fila[id]");
 }else{
     header("Location: register.html");
