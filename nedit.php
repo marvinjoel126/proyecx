@@ -8,16 +8,20 @@ $conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 if(!$conn){
     die("Conexion Fallida: ".mysqli_connect_error());
 }
-  $consulta = mysqli_query($conn, "SELECT * FROM registro");
 
-?>			
+$_nm= $_GET["nm"];
+
+  $consultas = mysqli_query($conn, "SELECT * FROM registro WHERE id = '".$_nm."'");
+  $resultado = mysqli_query_fech_array($_consultas);
+?>	
+
 
 <!DOCTYPE html>
 <html>
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>Inicio :V</title>
+	<title>Actualizar Producto</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
@@ -32,8 +36,7 @@ if(!$conn){
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="src/plugins/jvectormap/jquery-jvectormap-2.0.3.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -55,12 +58,13 @@ if(!$conn){
 			</div>
 			<div class='percent' id='percent1'>0%</div>
 			<div class="loading-text">
-				Cargando :)
+				Cargando :V
 			</div>
 		</div>
 	</div>
 
- <!--Buscador-->
+
+	<!--Buscador-->
 	<div class="header">
 		<div class="header-left">
 			<div class="menu-icon dw dw-menu"></div>
@@ -103,8 +107,7 @@ if(!$conn){
 			</div>
 		</div>
 		
-		
-		<!--Campana de arriba-->
+		<!--panel de arriba-->
 		<div class="header-right">
 			<div class="dashboard-setting user-notification">
 				<div class="dropdown">
@@ -115,48 +118,29 @@ if(!$conn){
 			</div>
 			<div class="user-notification">
 				<div class="dropdown">
-					<a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
-						<i class="icon-copy dw dw-notification"></i>
-						<span class="badge notification-active"></span>
-					</a>
+					
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="notification-list mx-h-350 customscroll">
-							<ul>
-								<li>
-									<a href="#">
-										<img src="vendors/images/img.jpg" alt="">
-										<h3>Marvin Joel </h3>
-										<p>hola</p>
-									</a>
-								</li>
-
-							</ul>
+							
 						</div>
 					</div>
 				</div>
 			</div>
 			
-			
-			<!--Perfil usuario-->
 			<div class="user-info-dropdown">
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
 							<img src="vendors/images/ayo.jpg" alt="">
 						</span>
-						<span class="user-name">Marvin</span>
+						<span class="user-name">Usuario :v</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<!-- <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Perfil</a>  -->
-						<!-- <a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Configuracion</a> -->
-					    <a class="dropdown-item" href="index.html"><i class="dw dw-logout"></i> Cerrar sesión</a>
-					
+						<a class="dropdown-item" href="Index.html"><i class="dw dw-logout"></i> Cerar sesion</a>
 					</div>
 				</div>
 			</div>
-			<div class="github-link">
-				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="vendors/images/github.svg" alt=""></a>
-			</div>
+			
 		</div>
 	</div>
 
@@ -237,22 +221,17 @@ if(!$conn){
 		</div>
 	</div>
 
-	
-	
-	
-	<!--bara de la izquierda-->
+	<!--panel izquierdo-->
 	<div class="left-side-bar">
 		<div class="brand-logo">
 			<a href="index.html">
-				<img src="vendors/images/img1/ayo1.svg" alt="" class="dark-logo">
-				<img src="vendors/images/deskapp-logo.svg" alt="" class="light-logo"> <!--imagen del panel izquierdo-->
+				<img src="vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
+				<img src="vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
 				<i class="ion-close-round"></i>
 			</div>
 		</div>
-		
-		<!--subtemas panel izquierdo -->
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
@@ -261,12 +240,21 @@ if(!$conn){
 							<span class="micon dw dw-house-1"></span><span class="mtext">Inicio</span>
 						</a>
 						<ul class="submenu">
-							<!--<li><a href="index.html">Inicio</a></li> -->
-							<li><a href="RegistroProducto.html">Registrar los Productos</a></li>
+							<li><a href="inicio.php">Ir a la pagina de Inicio</a></li>
+							
 						</ul>
-					
 					</li>
-					
+					<!--
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-library"></span><span class="mtext">Tablas</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="basic-table.html">Tablas basicas</a></li>
+							<li><a href="datatable.html">Tablas de datos</a></li>
+						</ul>
+					</li>
+					-->
 					
 					<li>
 						<a href="calendar.html" class="dropdown-toggle no-arrow">
@@ -274,86 +262,78 @@ if(!$conn){
 						</a>
 					</li>
 					
-
 					<li>
 						<a href="invoice.html" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-invoice"></span><span class="mtext">Factura</span>
 						</a>
 					</li>
-					
 					<li>
-						
 						<div class="dropdown-divider"></div>
-					</li>	
+					</li>
+
 				</ul>
 			</div>
+			
 		</div>
+		
 	</div>
 	
 	
-	
-	<!--linea superiro blanca 10/06/2021-->
-	<div class="mobile-menu-overlay"></div>
-
-	<div class="main-container">
-		<div class="pd-ltr-20">
-			<div class="card-box pd-20 height-100-p mb-30">
-				<div class="row align-items-center">
+	 
+	 
+    
+    <div class="main-container">
+		<!--los labels para registrar-->
+		<!--Inicio Contenido-->
+		<div class="container-fluid">
+			<div class="p-5">
+				<div class="text-center">
+					<h1 class="h4 text-gray-900 mb-4">Actualizar Producto</h1>
+				</div>
+				<form class="user" action="registrarproducto.php" method="POST">
+					<div class="form-group right">
+						<div class="col-sm-15 mb-6 mb-sm-0">
+							<input type="text" name="producto" value="<?php echo $resultado  ?>" class="form-control form-control-user" id="exampleName"
+								placeholder="Ingrese el nombre del producto">
+						</div>
 					</div>
+					<div class="form-group">
+						<input type="text" name="cantidad" class="form-control form-control-user" id="exampleInputEmail"
+							placeholder="Cantidad del producto">
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-6 mb-3 mb-sm-0">
+							<input type="text" name="precio" class="form-control form-control-user" id="exampleInputMovil"
+								placeholder="Precio del producto">
+						</div>
+						<div class="col-sm-6">
+							<input type="text" name="total" class="form-control form-control-user" id="exampleInputFijo"
+								placeholder="Total del producto">
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary btn-user btn-block">Guardar</button>
+				</form>
+				<hr>
 			</div>
-			
-			
-			<!--inicio cuadro-->
-			<div class="card-box mb-30">
-				<h2 class="h4 pd-20">Productos </h2>
-				<table class="data-table table nowrap">
-					<thead>
-						<tr>
-							<th class="table-plus datatable-nosort">No.</th>
-							<th>Nombre producto</th>
-							<th>cantidad</th>
-							<th>Precio Unitario</th>
-							<th >Total</th>
-							<th>Opciones</th>
-
-							
-						</tr>
-						<?php 
-							while ($row=mysqli_fetch_array($consulta)) {
-								echo "<tr>";
-								echo "<td>". $row["id"]."</td>";
-								echo "<td>". $row["producto"]."</td>";
-								echo "<td>". $row["cantidad"]."</td>";
-								echo "<td>". $row["precio"]."</td>";
-								echo "<td>". $row["total"]."</td>";
-								
-							    echo "<td>"."<a href='nedit.php?fg=".$fg."&nm=".$row['id']."'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pen' viewBox='0 0 16 16'>
-                                        <path d='m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z'/>
-                                      </svg></a>"."<a href='ndelete.php?fg=".$fg."&nm=".$row['id']."'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person-x' viewBox='0 0 16 16'>
-                                      <path d='M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z'/>
-                                      <path fill-rule='evenodd' d='M12.146 5.146a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z'/>
-                                    </svg></i> </a>". "</td>";
-							}
-							?>
-					</thead>
-
-					
-					
-				</table>
-			</div>
-
+			<!--Fin Contenido-->
+  
 		</div>
-	</div>
+		
+	  
+		
+				
+
+		
 	<!-- js -->
 	<script src="vendors/scripts/core.js"></script>
 	<script src="vendors/scripts/script.min.js"></script>
 	<script src="vendors/scripts/process.js"></script>
 	<script src="vendors/scripts/layout-settings.js"></script>
-	<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
-	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-	<script src="vendors/scripts/dashboard.js"></script>
+	<script src="src/plugins/jQuery-Knob-master/jquery.knob.min.js"></script>
+	<script src="src/plugins/highcharts-6.0.7/code/highcharts.js"></script>
+	<script src="src/plugins/highcharts-6.0.7/code/highcharts-more.js"></script>
+	<script src="src/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+	<script src="src/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+	<script src="vendors/scripts/dashboard2.js"></script>
 </body>
 </html>
