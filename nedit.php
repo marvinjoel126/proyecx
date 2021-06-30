@@ -9,10 +9,10 @@ if(!$conn){
     die("Conexion Fallida: ".mysqli_connect_error());
 }
 
-$_nm= $_GET["nm"];
+$nm= $_GET["nm"];
 
-  $consultas = mysqli_query($conn, "SELECT * FROM registro WHERE id = '".$_nm."'");
-  $resultado = mysqli_query_fech_array($_consultas);
+  $consultas = mysqli_query($conn, "SELECT * FROM registro WHERE id = '".$nm."'");
+  $resultado=mysqli_fetch_array($consultas);
 ?>	
 
 
@@ -290,24 +290,27 @@ $_nm= $_GET["nm"];
 				<div class="text-center">
 					<h1 class="h4 text-gray-900 mb-4">Actualizar Producto</h1>
 				</div>
-				<form class="user" action="registrarproducto.php" method="POST">
+
+				<form class="user" action="editar.php?nm=<?php echo $nm["id"] ?>" method="POST">
+
+
 					<div class="form-group right">
 						<div class="col-sm-15 mb-6 mb-sm-0">
-							<input type="text" name="producto" value="<?php echo $resultado  ?>" class="form-control form-control-user" id="exampleName"
+							<input type="text" name="producto" value="<?php echo $resultado["producto"]  ?>" class="form-control form-control-user" id="exampleName"
 								placeholder="Ingrese el nombre del producto">
 						</div>
 					</div>
 					<div class="form-group">
-						<input type="text" name="cantidad" class="form-control form-control-user" id="exampleInputEmail"
+						<input type="text" name="cantidad" value="<?php echo $resultado["cantidad"]  ?>" class="form-control form-control-user" id="exampleInputEmail"
 							placeholder="Cantidad del producto">
 					</div>
 					<div class="form-group row">
 						<div class="col-sm-6 mb-3 mb-sm-0">
-							<input type="text" name="precio" class="form-control form-control-user" id="exampleInputMovil"
+							<input type="text" name="precio" value="<?php echo $resultado["precio"]  ?>" class="form-control form-control-user" id="exampleInputMovil"
 								placeholder="Precio del producto">
 						</div>
 						<div class="col-sm-6">
-							<input type="text" name="total" class="form-control form-control-user" id="exampleInputFijo"
+							<input type="text" name="total" value="<?php echo $resultado["total"]  ?>" class="form-control form-control-user" id="exampleInputFijo"
 								placeholder="Total del producto">
 						</div>
 					</div>
