@@ -291,7 +291,7 @@ $nm= $_GET["nm"];
 					<h1 class="h4 text-gray-900 mb-4">Actualizar Producto</h1>
 				</div>
 
-				<form class="user" action="editar.php?nm=<?php echo $nm["id"] ?>" method="POST">
+				<form class="user" action="editar.php?nm=<?php echo $nm?>" method="POST">
 
 
 					<div class="form-group right">
