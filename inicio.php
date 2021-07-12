@@ -108,8 +108,8 @@ if(!$conn){
 								<li>
 									<a href="#">
 										<img src="vendors/images/img.jpg" alt="">
-										<h3>Marvin Joel </h3>
-										<p>hola</p>
+										<h3>Marvin Joel Chen </h3>
+										<p>Hola</p>
 									</a>
 								</li>
 
@@ -149,7 +149,7 @@ if(!$conn){
 		<div class="sidebar-title">
 			<h3 class="weight-600 font-16 text-blue">
 				Escoge la opción del diseño
-				<span class="btn-block font-weight-400 font-12">Configuracion del Usuario</span>
+				<span class="btn-block font-weight-400 font-12">Configuracion Del Usuario</span>
 			</h3>
 			<div class="close-sidebar" data-toggle="right-sidebar-close">
 				<i class="icon-copy ion-close-round"></i>
@@ -157,13 +157,13 @@ if(!$conn){
 		</div>
 		<div class="right-sidebar-body customscroll">
 			<div class="right-sidebar-body-content">
-				<h4 class="weight-600 font-18 pb-10">Elige el color del fondo del encabezado</h4>
+				<h4 class="weight-600 font-18 pb-10">Elige El Color Del Fondo Del Encabezado</h4>
 				<div class="sidebar-btn-group pb-30 mb-10">
 					<a href="javascript:void(0);" class="btn btn-outline-primary header-white active">Blanco</a>
 					<a href="javascript:void(0);" class="btn btn-outline-primary header-dark">Negro</a>
 				</div>
 
-				<h4 class="weight-600 font-18 pb-10">Elige el color del fondo de la barra lateral</h4>
+				<h4 class="weight-600 font-18 pb-10">Elige el color del fondo de la barra Lateral</h4>
 				<div class="sidebar-btn-group pb-30 mb-10">
 					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-light ">Blanco</a>
 					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-dark active">Negro</a>
