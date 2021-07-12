@@ -17,7 +17,7 @@ if(!$conn){
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>Inicio :V</title>
+	<title>Inicio :))</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
@@ -149,7 +149,7 @@ if(!$conn){
 		<div class="sidebar-title">
 			<h3 class="weight-600 font-16 text-blue">
 				Escoge la opción del diseño
-				<span class="btn-block font-weight-400 font-12">Configuracion del usuario</span>
+				<span class="btn-block font-weight-400 font-12">Configuracion del Usuario</span>
 			</h3>
 			<div class="close-sidebar" data-toggle="right-sidebar-close">
 				<i class="icon-copy ion-close-round"></i>
@@ -214,7 +214,7 @@ if(!$conn){
 				</div>
 
 				<div class="reset-options pt-30 text-center">
-					<button class="btn btn-danger" id="reset-settings">Reiniciar ajustes</button>
+					<button class="btn btn-danger" id="reset-settings">Reiniciar Ajustes</button>
 				</div>
 			</div>
 		</div>
