@@ -32,6 +32,16 @@
 	</script>
 </head>
 <body>
+
+<?php
+//Inicio de sesion
+session_start();
+$user = $_SESSION['nombre'];
+if(!isset($user)){
+ header("Location:index.html");
+}else{
+?>
+
 	<div class="pre-loader">
 		<div class="pre-loader-box">
 			<div class="loader-logo"><img src="vendors/images/img1/ayo1.jpg" alt=""></div>
@@ -115,10 +125,10 @@
 						<span class="user-icon">
 							<img src="vendors/images/ayo.jpg" alt="">
 						</span>
-						<span class="user-name">Usuario :v</span>
+						<span class="user-name"><?php echo $user; }?></span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="Index.html"><i class="dw dw-logout"></i> Cerar sesion</a>
+						<a class="dropdown-item" href="salir.php"><i class="dw dw-logout"></i> Cerar sesion</a>
 					</div>
 				</div>
 			</div>

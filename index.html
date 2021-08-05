@@ -3,7 +3,7 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>Iniciar Sesion</title>
+	<title>Publicidad</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
@@ -20,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
 
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
@@ -30,66 +31,216 @@
 		gtag('config', 'UA-119386393-1');
 	</script>
 </head>
-<body class="login-page">
-	<div class="login-header box-shadow">
-		<div class="container-fluid d-flex justify-content-between align-items-center">
-			<div class="brand-logo">
-				<a href="login.html">
-					<img src="vendors/images/deskapp-logo.svg" alt="">
-				</a>
+<body>
+	<div class="pre-loader">
+		<div class="pre-loader-box">
+			<div class="loader-logo"><img src="vendors/images/img1/ayo1.jpg" alt=""></div>
+			<div class='loader-progress' id="progress_div">
+				<div class='bar' id='bar1'></div>
 			</div>
-			<div class="login-menu">
-				<ul>
-					<li><a href="register.html">Crear Cuenta</a></li>
-				</ul>
+			<div class='percent' id='percent1'>0%</div>
+			<div class="loading-text">
+				Cargando :V
 			</div>
 		</div>
 	</div>
-	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-md-6 col-lg-7">
-					<img src="src/images/img/aka1.png" alt="">
-				</div>
-				<div class="col-md-6 col-lg-5">
-					<div class="login-box bg-white box-shadow border-radius-10">
-						<div class="login-title">
-							<h2 class="text-center text-primary">Iniciar Sesión</h2>
-						</div>
-						
-						<form action="inicioSesion.php"method="POST">
-							
-							<div class="input-group custom">
-								<input type="text" name="nombre" class="form-control form-control-lg" placeholder="Nombre Usuario">
-								<div class="input-group-append custom">
-									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
-								</div>
-							</div>
-							<div class="input-group custom">
-								<input type="password" name="pass" class="form-control form-control-lg" placeholder="Contraseña">
-								<div class="input-group-append custom">
-									<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
-								</div>
-							</div>
-							
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="input-group mb-0">
-										<!--
-											use code for form submit
-											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
-										-->
-								
-										<button type="submit" class="btn btn-primary btn-lg btn-block" href="inicio.php">Iniciar Sesion</button>
-									</div>
-									
+
+	<div class="header">
+		<div class="header-left">
+			<div class="menu-icon dw dw-menu"></div>
+			<div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
+			<div class="header-search">
 				
+			</div>
+		</div>
+		
+		<div class="header-right">
+			<div class="dashboard-setting user-notification">
+				<div class="dropdown">
+					<a class="dropdown-toggle no-arrow" href="javascript:;" data-toggle="right-sidebar">
+						<i class="dw dw-settings2"></i>
+					</a>
+				</div>
+			</div>
+			
+			
+			
+			<div class="user-info-dropdown">
+				<div class="dropdown">
+					
+					
+				</div>
+			</div>
+			<div class="github-link">
+				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="vendors/images/github.svg" alt=""></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="right-sidebar">
+		<div class="sidebar-title">
+			<h3 class="weight-600 font-16 text-blue">
+				Escoge la opción del diseño
+				<span class="btn-block font-weight-400 font-12">Configuracion Del Usuario</span>
+			</h3>
+			<div class="close-sidebar" data-toggle="right-sidebar-close">
+				<i class="icon-copy ion-close-round"></i>
+			</div>
+		</div>
+		<div class="right-sidebar-body customscroll">
+			<div class="right-sidebar-body-content">
+				<h4 class="weight-600 font-18 pb-10">Elige El Color Del Fondo Del Encabezado</h4>
+				<div class="sidebar-btn-group pb-30 mb-10">
+					<a href="javascript:void(0);" class="btn btn-outline-primary header-white active">Blanco</a>
+					<a href="javascript:void(0);" class="btn btn-outline-primary header-dark">Negro</a>
+				</div>
+
+				<h4 class="weight-600 font-18 pb-10">Elige el color del fondo de la barra Lateral</h4>
+				<div class="sidebar-btn-group pb-30 mb-10">
+					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-light ">Blanco</a>
+					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-dark active">Negro</a>
+				</div>
+
+				<h4 class="weight-600 font-18 pb-10">Escoge el icono del menu del desplegable</h4>
+				<div class="sidebar-radio-group pb-10 mb-10">
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-1" checked="">
+						<label class="custom-control-label" for="sidebaricon-1"><i class="fa fa-angle-down"></i></label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-2">
+						<label class="custom-control-label" for="sidebaricon-2"><i class="ion-plus-round"></i></label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-3">
+						<label class="custom-control-label" for="sidebaricon-3"><i class="fa fa-angle-double-right"></i></label>
+					</div>
+				</div>
+
+				<h4 class="weight-600 font-18 pb-10">Escoge el menu de los subtemas</h4>
+				<div class="sidebar-radio-group pb-30 mb-10">
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input" value="icon-list-style-1" checked="">
+						<label class="custom-control-label" for="sidebariconlist-1"><i class="ion-minus-round"></i></label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input" value="icon-list-style-2">
+						<label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o" aria-hidden="true"></i></label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input" value="icon-list-style-3">
+						<label class="custom-control-label" for="sidebariconlist-3"><i class="dw dw-check"></i></label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input" value="icon-list-style-4" checked="">
+						<label class="custom-control-label" for="sidebariconlist-4"><i class="icon-copy dw dw-next-2"></i></label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input" value="icon-list-style-5">
+						<label class="custom-control-label" for="sidebariconlist-5"><i class="dw dw-fast-forward-1"></i></label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input" value="icon-list-style-6">
+						<label class="custom-control-label" for="sidebariconlist-6"><i class="dw dw-next"></i></label>
+					</div>
+				</div>
+
+				<div class="reset-options pt-30 text-center">
+					<button class="btn btn-danger" id="reset-settings">Reiniciar Ajustes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="left-side-bar">
+		<div class="brand-logo">
+			<a href="index.html">
+				<img src="vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
+				<img src="vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+			</a>
+			<div class="close-sidebar" data-toggle="left-sidebar-close">
+				<i class="ion-close-round"></i>
+			</div>
+		</div>
+		<div class="menu-block customscroll">
+			<div class="sidebar-menu">
+				<ul id="accordion-menu">
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon dw dw-house-1"></span><span class="mtext">Empesemos</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="login.php">Iniciar Sesión</a></li>
+							
+						</ul>
+					</li>
+					
+					
+					
+			</div>
+		</div>
+	</div>
+	<div class="mobile-menu-overlay"></div>
+
+	
+	<div class="main-container">
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-200px">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<div class="title">
+								<h4>Bienvenidos ala pagina :)</h4>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<div class="blog-wrap">
+					<div class="container pd-0">
+						<div class="row">
+							<div class="col-md-8 col-sm-12">
+								<div class="blog-detail card-box overflow-hidden mb-30">
+									<div class="blog-img">
+										<img src="vendors/images/img10.jpg" alt="">
+									</div>
+									<div class="blog-caption">
+										<h4 class="mb-10">¿Que son las computadoras?</h4>
+										<p>La computadora es un sistema electrónico conformado principalmente por una CPU (unidad central de proceso), que es el “cerebro” de ésta y consiste en un microprocesador fabricado en un chip (que consiste en un trozo de silicio que contiene millones de componentes electrónicos). La computadora es capaz de recibir un conjunto de órdenes y ejecutarlas realizando cálculos complejos, o también agrupando y correlacionando otros tipos de información. Este aparato es también conocido como ordenador o computador.</p>
+										
+										<h5 class="mb-10">Tarjeta Madre</h5>
+										
+										<p>La placa base, también conocida como tarjeta madre, placa madre o placa principal, es una tarjeta de circuito impreso a la que se conectan los componentes que constituyen la computadora. 
+											Es una parte fundamental para montar cualquier computadora personal de escritorio o portátil o algún dispositivo.</p>
+									
+											
+										<h5 class="mb-10">Tarjeta de video</h5>
+										<p>Una tarjeta gráfica es una tarjeta de expansión que genera una alimentación de imágenes de salida a un dispositivo de visualización. Con frecuencia, estos se anuncian como tarjetas gráficas discretas o dedicadas, enfatizando la distinción entre estos y los gráficos integrados.</p>
+										
+										<h5 class="mb-10"> Un listado de componentes tecnologicos</h5>
+										<ol>
+											<li>Pantalla Led</li>
+											<li>Fuente de poder</li>
+											<li>Teclados</li>
+											<li>Mouse</li>
+											<li>UPS</li>
+											<li>Tarjetas de memoria RAM</li>
+											<li>Discos duros</li>
+											<li>Entre otros..</li>
+										</ol>
+									</div>
 								</div>
 							</div>
-						</form>
+							
+								
+								
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 	<!-- js -->

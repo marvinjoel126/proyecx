@@ -1,28 +1,28 @@
 <?php
+
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
 $dbname = "proyec";
 
+session_start();
 $conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 if(!$conn){
     die("Conexion Fallida: ".mysqli_connect_error());
 }else{
-    echo "Conexión Completada ";
-}
-
-$nombre = $_POST['nombre'];
+$user = $_POST['nombre'];
 $pass = $_POST['pass'];
 
-$sql = mysqli_query($conn," SELECT * FROM usuario WHERE nombre='".$nombre."' AND pass='".$pass."'");
-$resultado = mysqli_num_rows($sql);
+    $query="SELECT COUNT(*) as contar FROM usuario WHERE nombre='$user' AND pass='$pass'";
+    $consulta=mysqli_query($conn,$query);
+    $cadena=mysqli_fetch_array($consulta);
 
-if($resultado ==1){
-    $sql=mysqli_query($conn, "SELECT id FROM usuario WHERE nombre='".$nombre."' AND pass ='".$pass."'");
-    $fila =mysqli_fetch_array($sql);
-    header("Location: inicio.php");
-    //header("Location: /Login/sesion/index.php?fg=$fila[id]");
-}else{
-    header("Location: register.html");
+    if($cadena['contar'] > 0){
+        
+$_SESSION['nombre']=$user;
+        header("Location: inicio.php");
+    }else{
+        header("Location: index.html");
+    }
 }
 ?>
